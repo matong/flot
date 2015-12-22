@@ -1,6 +1,6 @@
 # Flot [![Build status](https://travis-ci.org/flot/flot.png)](https://travis-ci.org/flot/flot)
 
-## About ##
+## About （部分中文翻译）##
 
 Flot is a Javascript plotting library for jQuery.  
 Read more at the website: <http://www.flotcharts.org/>
@@ -17,9 +17,13 @@ Just include the Javascript file after you've included jQuery.
 Generally, all browsers that support the HTML5 canvas tag are
 supported.
 
+通常来说，所有的浏览器都支持HTML5 canvas标签。
+
 For support for Internet Explorer < 9, you can use [Excanvas]
 [excanvas], a canvas emulator; this is used in the examples bundled
 with Flot. You just include the excanvas script like this:
+
+对于IE9以下的版本，你可以使用[Excanvas][excanvas]，这是一个canvas的反正器，例子那里有用到。你只需要引入下面的语句即可：
 
 ```html
 <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="excanvas.min.js"></script><![endif]-->
@@ -44,6 +48,8 @@ charts because of performance improvements in event handling.
 
 Create a placeholder div to put the graph in:
 
+创建一个id为placeholder的DIV标签用来作图：
+
 ```html
 <div id="placeholder"></div>
 ```
@@ -51,6 +57,8 @@ Create a placeholder div to put the graph in:
 You need to set the width and height of this div, otherwise the plot
 library doesn't know how to scale the graph. You can do it inline like
 this:
+
+你必须为这个Div设置好宽度跟高度，否则plot不知道如何按什么比例去作图，你可以像下面一样采用用行内样式：
 
 ```html
 <div id="placeholder" style="width:600px;height:300px"></div>

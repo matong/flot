@@ -1,4 +1,7 @@
-# Flot Reference #
+# Flot Reference （部分中文翻译）#
+
+##翻译引言##
+由于本人英语能力有限，本翻译只是用于个人学习使用。下文中保留英语原文，避免混淆。感谢大家。
 
 **Table of Contents**
 
@@ -22,6 +25,7 @@
 ## 引言 ##
 
 Consider a call to the plot function:
+
 调用plot方式:
 
 ```js
@@ -37,11 +41,13 @@ don't use for anything else. Make sure you check any fancy styling
 you apply to the div, e.g. background images have been reported to be a
 problem on IE 7.
 
-plot会对placeholder进行操作，它可以是jQuery的一个对象，或者DOM元素，也可以是jQuery表达式。placeholder 必须先设置好宽度跟高度，正如在[README](README.md) 里提到的那样(先去读读那个吧，很短的，翻译的是我也没先读那个，然后就去读了)
+plot会对placeholder进行操作，它可以是jQuery的一个对象，或者DOM元素，也可以是jQuery表达式。placeholder 必须先设置好宽度跟高度，正如在[README](README.md) 里提到的那样(先去读读那个吧，很短的，翻译的是我也没先读那个，然后就去读了)。plot会修改一些placeholder的属性，所以建议你传递一个简单的Div，而不要用它来干其他事情。最好先确定下自己已用于Div上的样式，入背景图片，这个在IE7上被报告说有问题。
 
 The plot function can also be used as a jQuery chainable property.  This form
 naturally can't return the plot object directly, but you can still access it
 via the 'plot' data key, like this:
+
+plot函数/方法（下面都称函数吧）也可以用于jQuery的链式属性，这样的形式显然是不能正常直接返回plot对象的，但你仍然可以使用data关键字访问它，向这样：
 
 ```js
 var plot = $("#placeholder").plot(data, options).data("plot");
@@ -60,12 +66,17 @@ they're not necessarily deep-copied.
 
 The data is an array of data series:
 
+这个数据是一个数组串数据：
+
 ```js
 [ series1, series2, ... ]
 ```
 
 A series can either be raw data or an object with properties. The raw
 data format is an array of points:
+
+Data可以是元数据（应该是说只有数据没属性的）或者一个有属性的对象。
+元数据是一个数组：
 
 ```js
 [ [x1, y1], [x2, y2], ... ]
@@ -84,11 +95,15 @@ data from the database and serialize them directly to JSON without
 noticing the wrong type. If you're getting mysterious errors, double
 check that you're inputting numbers and not strings.
 
+有点要注意下就是为了简化Flot的内部逻辑，x跟y必须是数值（即时声明为时间序列也要这样做，详细的继续看下面怎么搞吧）。这是一个常见的问题，因为你有可能是接收到直接从数据库检索出来然后没有注意错误的类型就序列化成JSON的数据。如果你获得乱七八糟的错误提示，请确保那些传进来的是数字而不是字符串。
+
 If a null is specified as a point or if one of the coordinates is null
 or couldn't be converted to a number, the point is ignored when
 drawing. As a special case, a null value for lines is interpreted as a
 line segment end, i.e. the points before and after the null value are
 not connected.
+
+
 
 Lines and points take two coordinates. For filled lines and bars, you
 can specify a third coordinate which is the bottom of the filled
