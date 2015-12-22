@@ -103,11 +103,13 @@ drawing. As a special case, a null value for lines is interpreted as a
 line segment end, i.e. the points before and after the null value are
 not connected.
 
-
+如果指定的那个点是null/等同null，或者是不能转换成数值的，这个点在制图的时候将会被忽略。作为一个特例，条形图里的null值会被解释成一个线段的结尾，也就是说这个null值的点前后都不会被线连接到。
 
 Lines and points take two coordinates. For filled lines and bars, you
 can specify a third coordinate which is the bottom of the filled
 area/bar (defaults to 0).
+
+Lines跟Points需要两个坐标。对于填充Lines跟Bars，你可以指定底部填充区域/栏的第三个坐标。（默认为0）
 
 The format of a single series object is as follows:
 
@@ -132,6 +134,8 @@ You don't have to specify any of them except the data, the rest are
 options that will get default values. Typically you'd only specify
 label and data, like this:
 
+除了data属性是必要的，其他的属性都视为可选的，使用默认值的属性。往往你只需要指定lable跟data，像这样：
+
 ```js
 {
     label: "y = 3",
@@ -141,6 +145,8 @@ label and data, like this:
 
 The label is used for the legend, if you don't specify one, the series
 will not show up in the legend.
+
+lanel属性是用来显示说明的，如果你没有指定一个，列表里将不会显示说明。
 
 If you don't specify color, the series will get a color from the
 auto-generated colors. The color is either a CSS color specification
