@@ -2,15 +2,15 @@
 
 **Table of Contents**
 
-[Introduction](#introduction)
-| [Data Format](#data-format)
-| [Plot Options](#plot-options)
-| [Customizing the legend](#customizing-the-legend)
-| [Customizing the axes](#customizing-the-axes)
-| [Multiple axes](#multiple-axes)
-| [Time series data](#time-series-data)
-| [Customizing the data series](#customizing-the-data-series)
-| [Customizing the grid](#customizing-the-grid)
+[引言](#引言)
+| [数据格式](#data-format)
+| [Plot 参数选项](#plot-options)
+| [自定义legend](#customizing-the-legend)
+| [自定义axes](#customizing-the-axes)
+| [多个 axes](#multiple-axes)
+| [时间/日历串数据](#time-series-data)
+| [自定义数据串](#customizing-the-data-series)
+| [自定义grid](#customizing-the-grid)
 | [Specifying gradients](#specifying-gradients)
 | [Plot Methods](#plot-methods)
 | [Hooks](#hooks)
@@ -19,9 +19,10 @@
 
 ---
 
-## Introduction ##
+## 引言 ##
 
 Consider a call to the plot function:
+调用plot方式:
 
 ```js
 var plot = $.plot(placeholder, data, options)
@@ -35,6 +36,8 @@ placeholder so it's recommended you simply pass in a div that you
 don't use for anything else. Make sure you check any fancy styling
 you apply to the div, e.g. background images have been reported to be a
 problem on IE 7.
+
+plot会对placeholder进行操作，它可以是jQuery的一个对象，或者DOM元素，也可以是jQuery表达式。placeholder 必须先设置好宽度跟高度，正如在[README](README.md) 里提到的那样(先去读读那个吧，很短的，翻译的是我也没先读那个，然后就去读了)
 
 The plot function can also be used as a jQuery chainable property.  This form
 naturally can't return the plot object directly, but you can still access it
