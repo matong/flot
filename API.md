@@ -6,7 +6,7 @@
 **Table of Contents**
 
 [引言](#引言)
-| [数据格式](#data-format)
+| [Data格式](#data-format)
 | [Plot 参数选项](#plot-options)
 | [自定义legend](#customizing-the-legend)
 | [自定义axes](#customizing-the-axes)
@@ -62,7 +62,7 @@ objects you pass in to the plot function or get out of it since
 they're not necessarily deep-copied.
 
 
-## Data Format 数据格式 ##
+## Data Format ##
 
 The data is an array of data series:
 
