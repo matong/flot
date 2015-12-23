@@ -62,7 +62,7 @@ objects you pass in to the plot function or get out of it since
 they're not necessarily deep-copied.
 
 
-## Data Format ##
+## Data Format 数据格式 ##
 
 The data is an array of data series:
 
@@ -161,9 +161,13 @@ The "xaxis" and "yaxis" options specify which axis to use. The axes
 are numbered from 1 (default), so { yaxis: 2} means that the series
 should be plotted against the second y axis.
 
+指定xaxis和yaxis可选参数来使用哪个坐标，坐标是默认从数字1开始，{ yaxis: 2}就意味着序列对应第二个y轴。
+
 "clickable" and "hoverable" can be set to false to disable
 interactivity for specific series if interactivity is turned on in
 the plot, see below.
+
+clickable和hoverable可以可以被设置为false来关闭用户交互（前者是点击，后者是悬浮），后面还有详细的再看叻。
 
 The rest of the options are all documented below as they are the same
 as the default options passed in via the options parameter in the plot
@@ -184,6 +188,8 @@ Here's a complete example of a simple data specification:
 All options are completely optional. They are documented individually
 below, to change them you just specify them in an object, e.g.
 
+所有的配置参数都是可选的（废话么）。不翻译这废话了。。。
+
 ```js
 var options = {
     series: {
@@ -197,6 +203,7 @@ $.plot(placeholder, data, options);
 
 
 ## Customizing the legend ##
+定制化说明标签（就是鼠标悬浮在节点上然后展现的那个层）
 
 ```js
 legend: {
@@ -218,6 +225,8 @@ small label boxes with the color of the series. If you want to format
 the labels in some way, e.g. make them to links, you can pass in a
 function for "labelFormatter". Here's an example that makes them
 clickable:
+
+可以传一个函数给labelFormatter来专门定制说明标签的格式。
 
 ```js
 labelFormatter: function(label, series) {
@@ -329,6 +338,8 @@ of text containers, with each holding the labels for one axis. These containers
 are given the classes 'flot-[x|y]-axis', and 'flot-[x|y]#-axis', where '#' is
 the number of the axis when there are multiple axes.  For example, the x-axis
 labels for a simple plot with only a single x-axis might look like this:
+
+这个是大概在说明还可以象下面着这样来重载样式，要给定一个'flot-[x|y]-axis，然后再给定flot-[x|y]#-axis，#是对应坐标里的数字。
 
 ```html
 <div class='flot-x-axis flot-x1-axis'>
